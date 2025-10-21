@@ -1,0 +1,33 @@
+questions=("Which planet is near to sun?:",
+           "which is the largest planet in solar system?:",
+           "which is mutable?:",
+           "what is the color of the apple?:",
+           "Based on human emotion smile in face is considered as?:")
+options=(("A. earth","B. mercury","C. venus","D. saturn"),
+         ("A. earth","B. mercury","C. jupiter","D. saturn"),
+         ("A. list","B. set","C. tuples","D. dictionary"),
+         ("A. red","B. yellow","C. orange","D. maroon"),
+         ("A. sad","B. happy","C. hungry","D. angry"))
+
+answers=("B","C","A","A","B")
+guesses=[]
+score=0
+question_num=0
+for question in questions:
+     print("----------------------------------")
+     print(question)
+     for option in options[question_num]:
+         print(option)
+     guess=input("enter (A, B, C, D): ").upper()
+     guesses.append(guess)
+     if guess== answers[question_num]:
+         score+=1
+         print("Correct!")
+     else:
+         print("Incorrect!")
+         print(f"{answers[question_num]} was correct!")
+     question_num+=1
+
+
+
+     

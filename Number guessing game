@@ -1,0 +1,34 @@
+import random
+low=1
+high=100
+answers=random.randint(low,high)
+guesses=0
+is_running=True
+print("----------------------Python guessing game--------------------")
+print("Select a valid number between 1 and 100:")
+print("---------------------------------------------------------------")
+while is_running:
+    guess=input("Guess a number between 1 and 100: ")
+    if guess.isdigit():
+        guess=int(guess)
+        guesses+=1
+    else:
+        print("Invalid guess")
+        print("Select a valid number between 1 and 100")
+    if guess < low or guess > high:
+        print("the number is out of range")
+        print("Select a valid number between 1 and 100")
+    elif guess < answers:
+        print("you guessed too low")
+    elif guess > answers:
+        print("you guessed too high")
+    else:
+        print(f"you guessed the correct number{answers}")  # for showing the answer
+        print(f"number of guesses: {guesses}")  # for finding the number of guesses
+    if not input("Do you want to play again? (y/n): ").lower()=="y":
+        is_running=False
+
+
+else:
+    print("Invalid guess")
+    print(f"please select the correct number between 1 and 100")
